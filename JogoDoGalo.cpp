@@ -11,11 +11,13 @@ using namespace std;
 
 			int nTurno = 1; // Um extrazinho que mostra o numero do turno e quem o joga.
 
-			int nJogador = 1; //  Autoexplicatorio.
-
+			int nJogador = 1; //  Verifica o jogador, que varia entre 1 e 2, mudando atravez do modulo da divisao do turno 
+								//	( Numero par de turno = player 2, numero impar = player 1. Inicializado a 1 porque o X joga sempre primeiro.)
 			int nVitoriasX = 0;
 							// Quantas vezes o jogador 1 ou 2 ganhou.
 			int nVitoriasO = 0;
+						
+			int nEmpates = 0; //  Autoexplicatorio.
 
 
 //ESPACO PARA COLOCAR FUNCOES:
@@ -63,7 +65,76 @@ class funcao{
 	}
 	system("cls");
 	cout << '\n';
-	int vitoria(){
+	return (nTurno++);
+	}
+
+    
+}jdg ; // JOGO DO GALO
+
+
+
+
+
+
+
+
+//PROTOTIPAGEM DA FUNCAO 5 RESTART
+void restart(char pOcupado[10], int pV[10]);
+
+//Funcao 6, Empate
+int empate(int nTurno){
+	if (nTurno == 9){
+		cout << "Ninguem ganhou, todos empataram !";
+		cout << "\n Deseja jogar mais uma vez? Y/N \n ";
+	  	nEmpates++;
+	  	char escolha;
+	  	cin >> escolha;
+	  	if (escolha == ('y') ){
+	  		restart(pOcupado,pV);
+		}else {return nTurno;}
+		
+	}
+}
+
+
+
+
+//MAIN BEGIN
+main(){
+	if (nVitoriasX || nVitoriasO != 0){
+		cout << "\n \n \nO jogador 1 ( X )ganhou..." << nVitoriasX << "  vezes ! \n";
+		cout << "Enquanto que o jogador 2 ( O ) ganhou "<< nVitoriasO << "  vezes ! \n ";
+		cout << "Empataram  "<< nEmpates << " vezes. \n \n";
+	}
+		
+    cout << "A Carregar o Jogo do Galo, realizado por Pedro Perestrelo.\n \n \n";
+    
+    jdg.grelhaVazia();
+    
+    jdg.grelhaOcupada();
+    
+    for (nTurno = 0;nTurno != 9;){
+    	
+    	
+    	
+		jdg.turno();
+		
+    	jdg.grelhaOcupada();
+    	
+    	nTurno % 2 == 0 ? nJogador = 1 : nJogador = 2;
+    	
+    	cout << "\nTurno numero :  " <<nTurno << "  \n" << "E a vez do jogador:  " << nJogador  << "\n \n \n";
+    	
+    	cout << pOcupado[2];
+    	
+		vitoria();
+		empate(nTurno);
+	}
+}
+
+//MAIN END
+
+int vitoria(){
 	 if ((pOcupado[1] == 'X' && pOcupado[2] == 'X' && pOcupado[3] == 'X') ||
 	 	 (pOcupado[4] == 'X' && pOcupado[5] == 'X' && pOcupado[6] == 'X') ||
 	 	 (pOcupado[7] == 'X' && pOcupado[8] == 'X' && pOcupado[9] == 'X') ||
@@ -81,7 +152,7 @@ class funcao{
 	  	cin >> escolha;
 	  	if (escolha == ('y') ){
 	  		  restart(pOcupado,pV);
-			}else {return nTurno++;}
+			}else {return nTurno;}
 	  } else if (
 	  	 (pOcupado[1] == 'O' && pOcupado[2] == 'O' && pOcupado[3] == 'O') ||
 	 	 (pOcupado[4] == 'O' && pOcupado[5] == 'O' && pOcupado[6] == 'O') ||
@@ -99,60 +170,11 @@ class funcao{
 	  	cin >> escolha;
 	  	if (escolha == ('y') ){
 	  		restart(pOcupado,pV);
-		}else {return nTurno++;}
-	}
-}
-	
-};
-
+		}else {return nTurno;}
+		
 
 }
-
-
-
-
-
-
-
-//PROTOTIPAGEM DA FUNCAO 5 RESTART
-void restart(char pOcupado[10], int pV[10]);
-
-
-//MAIN BEGIN
-main(){
-	if (nVitoriasX || nVitoriasO != 0){
-		cout << "\n \n \nO jogador 1 ( X )ganhou..." << nVitoriasX << "  vezes ! \n";
-		cout << "Enquanto que o jogador 2 ( O ) ganhou "<< nVitoriasO << "  vezes ! \n \n";
-	}
-		
-    cout << "A Carregar o Jogo do Galo, realizado por Pedro Perestrelo.\n \n \n";
-    
-    void funcao::grelhaVazia();
-    
-    int funcao::grelhaOcupada();
-    
-    for (nTurno = 0;nTurno != 9;){
-    	
-    	
-    	
-		char funcao::turno();
-		
-    	int funcao::grelhaOcupada();
-    	
-    	nTurno % 2 == 0 ? nJogador = 1 : nJogador = 2;
-    	
-    	cout << "\nTurno numero :  " <<nTurno << "  \n" << "E a vez do jogador:  " << nJogador  << "\n \n \n";
-    	
-    	cout << pOcupado[2];
-    	
-		vitoria();
-		
-	}
 }
-
-//MAIN END
-
-
 void restart(char pOcupado[10],int pV[10]){
 	for (int i = 1; i != 10; i++){
 		pOcupado[i] = ' ';
