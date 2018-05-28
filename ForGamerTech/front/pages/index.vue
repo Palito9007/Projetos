@@ -13,9 +13,9 @@
         O melhor site de compra e venda de peças em segunda mão!
       </h2>
       <div class="links">
-        <a href="/home" target="_blank" class="button--green animated fadeInUp">Home</a>
-        <a href="/login" target="_blank" class="button--grey animated fadeInUp">Login</a>
-        <a href="/login" target="_blank" class="button--grey animated fadeInUp">Store</a>
+        <a href="/home" class="button--green animated fadeInUp">Home</a>
+        <a href="/login" class="button--grey animated fadeInUp">Login</a>
+        <a href="/store"  class="button--grey animated fadeInUp">Store</a>
       </div>
     </div>
   </section>
