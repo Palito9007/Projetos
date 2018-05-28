@@ -2,21 +2,16 @@
 
 <template>
 
-    <body>
-      <div class="container">
-        <br>
-        <h5>Insira o seu e-mail</h5>
-        <input type="text" name="email" id="email">
-        <br>
-        <br>
-        <h5>Insira a respectiva password da sua conta</h5>
-        <input type="text" name="password" id="password">
-        <br>
-        <br>
-        <button type="button">Log in </button>
-      </div>
-    </body>
-
+<div class="container login-wrapper border border-light">
+    <form class="form-signin" @submit.prevent="login">
+      <h2 class="form-signin-heading">Formulário de Login</h2>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input v-model="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input v-model="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </form>
+  </div>
 </template>
 
 
@@ -31,13 +26,12 @@
 export default {
   layout: 'sidenav',
   methods:{
-    login(login){
-        axios.post("http://localhost:8081/login", this.obj).then(function(response){
-      response.data
-    })
     }
+
+
+
+    
   }
-}
 </script>
 
 
