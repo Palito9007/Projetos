@@ -12,25 +12,25 @@
 <body id="main" class="row">
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
   
-  <div class="container"> <h1 class="forgamertech">ForGamerTech</h1>
+  <div class="container"> <h1 class="forgamertech">ForGamerTech</h1> </div>
 
 
 </body>
 
-</div>
+
 
 
 <script>
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    document.html.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
-    document.body.style.backgroundColor = "white";
+    document.html.style.backgroundColor = "white";
 }
 </script>
 <nuxt/>
