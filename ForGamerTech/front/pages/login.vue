@@ -42,5 +42,10 @@ export default {
 
 
 <style>
+.container{
+  display: block;
+  text-align: center;
+
+}
 
 </style>

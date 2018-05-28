@@ -5,7 +5,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     </head>
     <div>
-      <h1 class="title">For Gamer Tech</h1>
+      <h1 class="title">ForGamerTech</h1>
       <br>
      
       <br>
@@ -33,7 +33,7 @@
 }
 .title
 { 
-  font-family: "Times New Roman", Times, serif;
+  font-family: consolas;
   display: block;
   font-weight: 300;
   font-size: 100px; 
@@ -42,7 +42,8 @@
 .subtitle
 {
   font-weight: 300;
-  font-size: 42px;
+  font-family: consolas;
+  font-size: 30px;
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;

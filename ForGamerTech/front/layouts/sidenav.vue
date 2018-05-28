@@ -12,11 +12,11 @@
 <body id="main" class="row">
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
   
-  <div class="container"> <h1 class="forgamertech">ForGamerTech</h1> </div>
+  
 
 
 </body>
-
+<div class="container"> <h1 class="forgamertech">ForGamerTech</h1> </div>
 
 
 
@@ -97,11 +97,13 @@ body {
 {
   
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
+  display: Block;
   font-weight: 300;
-  font-size: 100px;
+  font-size: 90px;
   color: #35495e;
+  text-align: center;
   letter-spacing: 1px;
+  padding-right: 40px;
   
 }
 
