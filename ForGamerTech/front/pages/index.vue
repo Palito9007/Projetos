@@ -5,9 +5,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     </head>
     <div>
-      <h1 class="title animated bounceInDown">  ForGamerTech
-      </h1>
+      <h1 class="title">For Gamer Tech</h1>
       <br>
+     
       <br>
       <h2 class="subtitle animated fadeInUp">
         O melhor site de compra e venda de peças em segunda mão!
@@ -21,9 +21,8 @@
   </section>
 </template>
 
-
-
 <style scoped>
+
 .container
 {
   min-height: 100vh;
@@ -34,14 +33,10 @@
 }
 .title
 { 
-  color: -webkit-linear-gradient(aqua, #333);
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Times New Roman", Times, serif;
   display: block;
-  color: -webkit-linear-gradient (92deg, rgb(243, 86, 38), rgb(254, 171, 58));
-  -webkit-text-fill-color: solid;
   font-weight: 300;
-  font-size: 100px;
-  letter-spacing: 1px; 
+  font-size: 100px; 
 
 }
 .subtitle
@@ -56,4 +51,56 @@
 {
   padding-top: 15px;
 }
+
+h1 {  
+  color:#313131;
+  font-weight: bold;
+  -webkit-animation: colorchange 20s infinite alternate;
+}
+
+@-webkit-keyframes colorchange {
+  0% {
+    color: blue;
+  }
+
+  10% {
+    color: #8e44ad;
+  }
+
+  20% {
+    color: #1abc9c;
+  }
+
+  30% {
+    color: #d35400;
+  }
+
+  40% {
+    color: blue;
+  }
+
+  50% {
+    color: #34495e;
+  }
+
+  60% {
+    color: blue;
+  }
+
+  70% {
+    color: #2980b9;
+  }
+  80% {
+    color: #f1c40f;
+  }
+
+  90% {
+    color: #2980b9;
+  }
+
+  100% {
+    color: pink;
+  }
+}
+
 </style>
