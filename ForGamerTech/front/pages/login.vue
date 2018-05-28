@@ -46,18 +46,11 @@ body {
   background: #605B56;
 }
 
-<<<<<<< HEAD
 <style>
 .container{
   display: block;
   text-align: center;
 
-=======
-.login-wrapper {
-  background: #fff;
-  width: 70%;
-  margin: 12% auto;
->>>>>>> 833435ea980090546831678ffd7af9dd4bfa33bc
 }
 
 .form-signin {
