@@ -3,7 +3,7 @@
 <template>
 
     <body>
-      <div>
+      <div class="container">
         <h5>Insira o seu e-mail</h5>
         <input type="text" name="email" id="email">
         <br>
@@ -24,6 +24,7 @@
 
 <script>
 export default {
+  layout: 'sidenav',
   methods:{
     login(login){
         axios.post("http://localhost:8081/login", this.obj).then(function(response){

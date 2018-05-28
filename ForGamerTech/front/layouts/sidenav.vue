@@ -9,13 +9,13 @@
   <a v-if=" admin == true" href="/admin">Modo administrador</a>
 </div>
 
-<div id="main" class="row">
+<body id="main" class="row">
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
   
   <div class="container"> <h1 class="forgamertech">ForGamerTech</h1>
 
 
-</div>
+</body>
 
 </div>
 
