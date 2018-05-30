@@ -1,18 +1,21 @@
 <template>
    <body>
-    
+     
+
+
    </body>
 </template>
 
 <script>
+import axios from 'axios';
 //O navbar / menu esta nos layouts
 export default {
-  layout: 'sidenav'
-}
+  layout: "sidenav",
+};
 </script>
 
 <style scoped>
-body{
+body {
   background-color: black;
 }
 </style>

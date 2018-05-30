@@ -15,7 +15,7 @@
       <div class="links">
         <a href="/home" class="button--green animated fadeInUp">Home</a>
         <a href="/login" class="button--grey animated fadeInUp">Login</a>
-        <a href="/store"  class="button--grey animated fadeInUp">Store</a>
+        <a href="/loja"  class="button--grey animated fadeInUp">Loja</a>
       </div>
     </div>
   </section>

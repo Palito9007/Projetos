@@ -25,32 +25,45 @@
 <script>
 export default {
   layout: 'sidenav',
-  name: 'Login',
+  name: 'login',
   data () {
     return {
-      email: '',
-      password: ''
+      credentials: {
+        email: '',
+        password: ''
+      },
+      loggingIn: false,
+      error: ''
     }
   },
   methods: {
-    login () {
-      console.log(this.email)
-      console.log(this.password)
-    }
+    submit () {
+      this.loggingIn = true
+      const credentials = {
+        email: this.credentials.email,
+        password: this.credentials.password
+      }
+      // Auth.login() returns a promise. A redirect will happen on success.
+      // For errors, use .then() to capture the response to output
+      // error_description (if exists) as shown below:
+      this.$auth.login(credentials, 'dashboard').then((response) => {
+        this.loggingIn = false
+        this.error = utils.getError(response)
+      })
+    },
   }
 }
 </script>
 
-<style lang="css">
-body {
-  background: #605B56;
-}
 
 <style>
 .container{
   display: block;
   text-align: center;
 
+}
+.ev-login {
+  margin-top: 100px;
 }
 
 .form-signin {

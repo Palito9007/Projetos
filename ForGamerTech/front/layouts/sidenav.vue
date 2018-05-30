@@ -12,8 +12,8 @@
     <a href="#">Gráfica</a>
     <a href="#">Coller</a>
   </div>
-  <a v-if=" clienAuth== true" href="/perfil/:id">Perfil</a>
-  <a v-if=" admin == true" href="/admin">Modo administrador</a>
+  <a href="/perfil/:id">Perfil</a>
+  <a  href="/admin">Modo administrador</a>
 </div>
 
 <body id="main" class="row">
