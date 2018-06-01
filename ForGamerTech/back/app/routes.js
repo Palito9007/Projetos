@@ -74,38 +74,41 @@ module.exports = function(app, passport) {
             user: req.user
         })
     });
-    app.get('/submit'), function(request, response){
+    app.get('/submit', function(request, response){
 
-    }
+    })
     app.post('/submit', function(request, response){
         var p = request.body;
         var query = "INSERT INTO componentes (IDcomponente, nome, preco, IDrequisicao, IDcomprador, vendido, descricao, imagem, marca, dataCompra, numFatura, IDcategoria, Visualizacoes) VALUES ? ";
         var values = [[p.IDcomponente, p.nome, p.preco, p.IDrequisicao, p.IDcomprador, p.vendido, p.descricao,p.imagem,p.marca,p.dataCompra, p.numFatura , p.IDcategoria,p.Visualizacoes]];
         connection.query(query, [values], function (err, result) {
             if (err) throw err;
-            console.log("Number of records deleted: " + result.affectedRows)
+            console.log("Number of records inserted: " + result.affectedRows)
           })
         })
-    app.post('/submit/del', function(request, response){
+    app.get('/del', function(request,response){
+
+    })
+    app.post('/del', function(request, response){
+        var p = request.body;
+        var query = "DELETE FROM componentes WHERE IDcomponente = ? ";
+        var values = [[p.del]];
+        connection.query(query, [values], function (err, result) {
+            if (err) throw err;
+            console.log("Number of records deleted: " + result.affectedRows)
+          })
+    });
+    app.post('/submit/upd', function(request, response){
         connection.connect(function(err) {
             if (err) throw err;
             var query = "UPDATE componentes SET ? WHERE ?";
-            var values1 = request.params.id;
-            var values2 = request.params.id;
+            var values2 = request.body;
             con.query(query, [values1], [values2], function (err, result) {
               if (err) throw err;
               console.log("Number of records deleted: " + result.affectedRows);
             });
 
         })
-    });
-    app.post('/submit/upd', function(request, response){
-        var query = "INSERT INTO componentes (ID_componente, nome, preço) VALUES ?";
-        var values = request.params.id;
-        connection.query(query, [values], function (err, result, fields) {
-            if (err) throw err;
-            response.send("Number of records inserted: " + result.affectedRows);
-          })
     });
     
 };

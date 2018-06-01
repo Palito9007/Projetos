@@ -45,13 +45,15 @@
            </div>
           </div>
           <br> <br> <br>
-      <div>
-        <h1 class="text-center"><button type="delete">DELETE</button></h1>
+      <div>  
+      </div>
+      </form>
+      <form @submit.prevent='del'>
+        <h1 class="text-center"><button type="del">DELETE</button></h1>
             <div class="text-center">
-                     <input type="text" name="" id="" placeholder="ID A ELIMINAR !!!">
+                     <input type="number" name="" id="" v-model="delProd.del" placeholder="ID A ELIMINAR !!!">
                      
            </div>
-      </div>
      </form>
    </body>
 </template>
@@ -76,6 +78,9 @@ export default {
           IDcategoria: null,
           Visualizacoes: null,
 
+        },
+        delProd:{
+          del: null
         }
       }
     },
@@ -86,7 +91,7 @@ export default {
           
         })
         }, 
-        delete(){ axios.delete("http://localhost:8081/submit/del")
+        del(){ axios.delete("http://localhost:8081/del")
         .then(function(response){
           console.log(response);
         })}
