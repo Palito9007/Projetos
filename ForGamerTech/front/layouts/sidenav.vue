@@ -12,8 +12,8 @@
     <a href="#">Gráfica</a>
     <a href="#">Coller</a>
   </div>
-  <a href="/perfil/:id">Perfil</a>
-  <a  href="/admin">Modo administrador</a>
+  <a v-if="loginAuth == true" href="/perfil/:id">Perfil</a>
+  <a v-if="adminAuth == true" href="/admin">Modo administrador</a>
 </div>
 
 <body id="main" class="row">
@@ -71,9 +71,7 @@ body {
     font-family: "Lato", sans-serif;
     transition: background-color .5s;
 }
-.closebtn{
-    
-}
+
 .sidenav {
     height: 100%;
     width: 0;
@@ -156,7 +154,7 @@ h1 {
   color:#313131;
   font-weight: bold;
   position: relative;
-  -webkit-animation:colorchange 20s infinite alternate;
+  -webkit-animation:colorchange 50s infinite alternate;
 }
 
 @-webkit-keyframes colorchange {
@@ -177,7 +175,7 @@ h1 {
   }
 
   40% {
-    color: blue;
+    color: lightgreen;
   }
 
   50% {
@@ -196,11 +194,11 @@ h1 {
   }
 
   90% {
-    color: #2980b9;
+    color: #02b8c5;
   }
 
   100% {
-    color: pink;
+    color: rgb(206, 0, 0);
   }
 }
 

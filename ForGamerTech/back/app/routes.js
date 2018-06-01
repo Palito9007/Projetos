@@ -79,9 +79,9 @@ module.exports = function(app, passport) {
     }
     app.post('/submit', function(request, response){
         var p = request.body;
-        var query = "INSERT INTO componentes (ID_componente, nome, preço,imagem, descricao, marca, ID_categoria, visualizacoes) VALUES ?";
-        var values = [[p.ID_componente, p.nome, p.preco,p.imagem,p.descricao,p.marca,p.ID_categoria,p.visualizacoes]];
-        connection.query(query, values, function (err, result) {
+        var query = "INSERT INTO componentes (IDcomponente, nome, preco, IDrequisicao, IDcomprador, vendido, descricao, imagem, marca, dataCompra, numFatura, IDcategoria, Visualizacoes) VALUES ? ";
+        var values = [[p.IDcomponente, p.nome, p.preco, p.IDrequisicao, p.IDcomprador, p.vendido, p.descricao,p.imagem,p.marca,p.dataCompra, p.numFatura , p.IDcategoria,p.Visualizacoes]];
+        connection.query(query, [values], function (err, result) {
             if (err) throw err;
             console.log("Number of records deleted: " + result.affectedRows)
           })
@@ -92,7 +92,7 @@ module.exports = function(app, passport) {
             var query = "UPDATE componentes SET ? WHERE ?";
             var values1 = request.params.id;
             var values2 = request.params.id;
-            con.query(query, values1, values2, function (err, result) {
+            con.query(query, [values1], [values2], function (err, result) {
               if (err) throw err;
               console.log("Number of records deleted: " + result.affectedRows);
             });
