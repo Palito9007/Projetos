@@ -102,6 +102,7 @@ module.exports = function(app, passport) {
         connection.connect(function(err) {
             if (err) throw err;
             var query = "UPDATE componentes SET ? WHERE ?";
+            var values1 = request.body;
             var values2 = request.body;
             con.query(query, [values1], [values2], function (err, result) {
               if (err) throw err;

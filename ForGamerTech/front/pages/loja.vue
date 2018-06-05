@@ -18,6 +18,7 @@
                   :produto="artigo.nome"
                   :valor="+artigo.preco" />
 </div>
+<br>
  </div>  
 </body>
 </template>
@@ -113,7 +114,7 @@ li a:hover {
   align-items: center;
   flex-direction: column;
   border-radius: 5px;
-  border: 1px solid #06c4d1;
+  border: 1px solid #000000;
   background-color: #eee;
 }
 .centrado{
