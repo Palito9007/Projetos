@@ -25,8 +25,6 @@ app.use(function(req, res, next) {
 // routes ======================================================================
 require('./config/passport')(passport); // pass passport for configuration
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
-require('./loja.js')(app); // load our routes and pass in our app and fully configured passport
-//axios.get('')
 
 
 // express server

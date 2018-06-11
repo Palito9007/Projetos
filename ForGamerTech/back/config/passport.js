@@ -58,7 +58,7 @@ module.exports = function (passport) {
 
             else{
 
-                var query = 'INSERT INTO test.users (email,password) VALUES ?';
+                var query = 'INSERT INTO utilizadores (email,password) VALUES ?';
                 var values = [[email,password]];
 
                 connection.query(query, [values], function (err, result, fields){
@@ -83,7 +83,7 @@ module.exports = function (passport) {
         passReqToCallback: true // allows us to pass back the entire request to the callback
     },
         function (req, email, password, done) {
-            connection.query("SELECT * FROM test.users WHERE email = '" + email + "'", function(err, rows){
+            connection.query("SELECT * FROM utilizadores WHERE email = '" + email + "'", function(err, rows){
                 if (err){
                     return done(err);
                 }
